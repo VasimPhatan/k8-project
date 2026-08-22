@@ -101,7 +101,7 @@ spec:
           # by default it mounts and thinks as directory
           mountPath: "/etc/nginx/nginx.conf"
           subPath: nginx.conf
-          readOnly: truee
+          readOnly: true
 
         
         
