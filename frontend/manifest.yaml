@@ -92,8 +92,12 @@ spec:
       - name: frontend
         image: vasimphatan/frontend:v1
         imagePullPolicy: Always
+        volumes:
+        - name: nginx-config
+          configMap:
+            name: frontend
         volumeMounts:
-        - name: nginx.conf
+        - name: nginx-config
           mountpath: "/etc/nginx/nginx.conf"
           subPath: nginx.conf
           readOnly: true
