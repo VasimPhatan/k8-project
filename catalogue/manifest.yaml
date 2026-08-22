@@ -49,6 +49,6 @@ spec:
     project: roboshop
   ports:
   - protocol : TCP
-    port: 27017
-    targetPort: 27017
+    port: 8080
+    targetPort: 8080
 
