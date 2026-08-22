@@ -95,12 +95,13 @@ spec:
       containers:
       - name: frontend
         image: vasimphatan/frontend:v1
-        imagePullPolicy: Always
+        imagePullPolicy: Always # safe to pull everytime, there may be images with same version rebuilt and pushe
         volumeMounts:
         - name: nginx-config
-          mountpath: "/etc/nginx/nginx.conf"
+          # by default it mounts and thinks as directory
+          mountPath: "/etc/nginx/nginx.conf"
           subPath: nginx.conf
-          readOnly: true
+          readOnly: truee
 
         
         
