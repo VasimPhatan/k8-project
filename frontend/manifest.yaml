@@ -88,14 +88,15 @@ spec:
         component: web
         project: roboshop
     spec:
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: frontend
       containers:
       - name: frontend
         image: vasimphatan/frontend:v1
         imagePullPolicy: Always
-        volumes:
-        - name: nginx-config
-          configMap:
-            name: frontend
+        
         volumeMounts:
         - name: nginx-config
           mountpath: "/etc/nginx/nginx.conf"
