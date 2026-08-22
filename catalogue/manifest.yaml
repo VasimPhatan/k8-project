@@ -30,6 +30,7 @@ spec:
       containers:
       - name: catalogue
         image: vasimphatan/catalogue:v1
+        imagePullPolicy: Always
         envFrom:
         - configMapRef:
            name: catalogue

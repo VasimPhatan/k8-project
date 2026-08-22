@@ -20,6 +20,7 @@ spec:
       containers:
       - name: mysql
         image: vasimphatan/mysql:v1
+        imagePullPolicy: Always
     
 
 ---

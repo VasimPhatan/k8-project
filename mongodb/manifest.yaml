@@ -20,6 +20,7 @@ spec:
       containers:
       - name: mongodb
         image: vasimphatan/mongodb:v1
+        imagePullPolicy: Always
     
 
 ---
