@@ -1,0 +1,42 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: roboshop
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: db
+      project: roboshop
+  
+  template:
+    metadata :
+      labels: 
+        component: db
+        project: roboshop
+    spec:
+      containers:
+      - name: mysql
+        image: vasimphatan/mysql:v1
+    
+
+---
+apiVersion: v1 
+kind: Service
+metadata:
+  name: mysql
+  namespace: roboshop
+
+spec:
+  type: ClusterIP 
+  selector:
+    component: db
+    project: roboshop
+  ports:
+  - protocol : TCP
+    port: 27017
+    targetPort: 27017
+
+  
